@@ -70,10 +70,62 @@ const newArray = numberArray.map((n) => n + 5)
 //.map(() =>{})
 //const newArray = [6,7,8,9,10]
 
-
+//kolm valikut tavaliselt
 const newArray2 = numberArray.map((element, index, array) => {
+    //key value paar
+    //short hand, key ja value sama muutujaga siis ei pea panema koolonit( element:element, "index"=index... pole tarvis)
+    console.log({element, newElement: element + 5, index, array})
     return element + 5
 })
 
 console.log(newArray2)
-//filter
+
+
+
+
+//Filter
+
+//omab kõiki neid arve mis on väiksemad kui 4
+const filteredArray= numberArray.filter(element => element < 4)
+//paneb listi kui true
+console.log({numberArray,filteredArray})
+
+
+//vaja tekitada uus array iga inimese andmetega
+//nimi on nagu on
+//vanus 20 aastat juurde indexi arvule
+//email nimi@company.com
+//aadress suvakas
+//
+const names = ['Juku', 'Mari', 'Jaan', 'Annika']
+
+const data = names.map(name => {
+    return {
+        name: name,
+        age: name.length + 20,
+        email: `${name.toLowerCase()}@company.com`,
+        aadress:`${name} Street 35`,
+        username: name.split("").reverse().join("")
+    }
+})
+
+console.log(data)
+
+console.log(data[0])
+
+//tahan lisada pikkuse juurde
+
+const newJuku ={
+    ...data[0],
+    height:175
+}
+
+console.log({newJuku})
+
+//kui tahad midagi üle kirjutada
+const evenNewerJuku ={
+    ...data[0],
+    age:99
+}
+
+console.log({newJuku, evenNewerJuku})
